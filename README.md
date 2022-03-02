@@ -1,6 +1,6 @@
 # Shopping-Cart
 
-###Collaborators
+## Collaborators
 <li>
   Carter
   Victor
