@@ -24,54 +24,9 @@
 
 		<div class="products">
 
-			<div class="product">
+			<!-- Render products -->
 
-				<!-- image insert here -->
-				<img src="/image/Apple.jpg">
-
-				<div class="product-info">
-
-					<h3 class="product-name">Aple</h3>
-
-					<h4 class="product-price">$1</h4>
-
-					<p class="product-quantity">Quantity: <input value="1" name="">
-
-					<p class="product-add">
-
-						<i class="fa fa-trash" aria-hidden="true"></i>
-
-						<span class="add">Add to Cart</span>
-
-					</p>
-
-				</div>
-
-			</div>
-
-			<div class="product">
-
-				<!-- Insert image here -->
-				<img src="/image/Orange.jpg">
-
-				<div class="product-info">
-
-					<h3 class="product-name">Orange</h3>
-					<h4 class="product-price">$1</h4>
-
-					<p class="product-quantity">Qnt: <input value="1" name="">
-
-					<p class="product-add">
-
-						<i class="fa fa-trash" aria-hidden="true"></i>
-
-						<span class="add">Add to cart</span>
-
-					</p>
-
-				</div>
-
-			</div>
+		
 
 		</div>
 
@@ -80,7 +35,7 @@
 			<p>
 
 				<span>Total Price</span>
-				<span>$2</span>
+				<span id = "total-price">$0</span>
 
 			</p>
 
@@ -88,7 +43,7 @@
 
 				<span>Number of Items</span>
 
-				<span>2</span>
+				<span id = "total-items">0</span>
 
 			</p>
 
@@ -103,6 +58,8 @@
 
 
 </body>
+<script src="product.js"></script>
+<script src="app.js"></script>
 
 
 </html>
