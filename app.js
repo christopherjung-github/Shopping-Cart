@@ -36,12 +36,21 @@ function renderProducts(){
 }
 renderProducts();
 //Cart Array
+let cart = [];
 
 //Add to Cart
 var total_price = 0;
+var total_item = 0;
 function addItem(id){
+
     const item = products.find((product) => product.id === id);
     total_price += item.price;
-    
+    total_item++;
+
     document.getElementById("total-price").innerHTML = "$ " + total_price; 
+    document.getElementById("total-items").innerHTML = total_item; 
+
+    cart.push(item);
+    console.log(cart);
+    
 }
