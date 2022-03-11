@@ -60,4 +60,3 @@ const products = [
         imgSrc: "./image/Nectarine.jpg"
     }
 ]
-]
