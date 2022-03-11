@@ -22,7 +22,7 @@ const products = [
         name: "Grape",
         price: 4,
         imgSrc: "./image/Grape.jpg"
-    }
+    },
     {
         id: 05,
         name: "Lemon",
