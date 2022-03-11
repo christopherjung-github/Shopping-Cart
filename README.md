@@ -7,4 +7,5 @@
   Chris
   Jessi
   Vinh
+  Frank
  </li>
