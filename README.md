@@ -1,6 +1,9 @@
 # Product Name: Shopping-Cart
 
-## Features:
+### Press Release / Pitch:
+*
+
+### Features:
 * F01 | Store front: home page, check out page
 * F02 | Inventory management tools
 * F03 | Account management tools
@@ -11,7 +14,7 @@
 * F08 | Product Category and Navigation
 * F09 | Search bar
 
-## Collaborators:
+### Collaborators:
 * Chris  - Product Owner  / Front-end
 * Victor - Scrum Master   / Front-end
 * Vinh   - Technical Lead / Back-end
