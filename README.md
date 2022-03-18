@@ -1,7 +1,7 @@
 ## Product Name: Shopping-Cart
 
 ### Press Release / Pitch:
-*
+* We'll have something!!
 
 ### Features:
 * F01 | Store front: home page, check out page
