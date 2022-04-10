@@ -30,3 +30,52 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
 }
+
+input[type=text]{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.icon-container{
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.btn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn:hover{
+    background-color: #45a049;
+}
+
+span.price{
+    float: right;
+    color: grey;
+}
+
+@media (max-width: 800px){
+    .row{
+        flex-direction: column-reverse;
+    }
+    .col-25{
+        margin-bottom: 20px;
+    }
+}
