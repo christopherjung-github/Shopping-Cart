@@ -64,8 +64,6 @@ function addItem(id){
     if (!cartExists.includes(item))
         cartExists.push(item);
     
-    renderCart();
-
     var total_quantity = 0;
 
     //  iterate through the cart to find the total number of specific item
