@@ -1,6 +1,6 @@
 //Select Element
 const productsEl = document.querySelector(".products");
-const cartItems = document.querySelector(".cart-items")
+//const cartItems = document.querySelector(".cart-items")   >>>COMMENTED OUT UNTIL NAVIGATION TO CHECKOUT IS ADDED<<<
 
 //Render Products
 function renderProducts(){
@@ -39,7 +39,7 @@ function renderProducts(){
 renderProducts();
 //Cart Array
 let cart = [];
-let cartExists = [];
+const item = products.find((product) => product.id === 01)
 //Add to Cart
 var total_price = 0;
 var total_item = 0;
@@ -80,6 +80,7 @@ function addItem(id){
     //console.log(cart);
 }
 
+let cartExists = [];
 function renderCart() {
     cartExists.forEach(function(item) {
         var element = document.getElementById("total-item-" + item.id)
@@ -93,15 +94,9 @@ function renderCart() {
             cartItems.innerHTML +=    
                 `
                     <div class="cart-product-info-${item.id}">
-
-                        <p class="cart-product-name-${item.id}">${item.name}</p>
-
-                        <p class="cart-product-price"> <small>$</small> ${item.price}</p>
-
-                        <p>	<span>Total Item</span>	<span id = "total-item-${item.id}">0</span>	</p>
-                        <p>	<span>Total Price</span>	<span id = "total-price-${item.id}">$0</span>	</p>
+                        <p <class="cart-product-name-${item.id}">${item.name}
+                        <class="cart-product-price"> <small>$</small> ${item.price}</p>
                     </div>
-
                 `
         }
     })
