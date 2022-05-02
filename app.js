@@ -1,6 +1,6 @@
 //Select Element
 const productsEl = document.querySelector(".products");
-//const cartItems = document.querySelector(".cart-items")   >>>COMMENTED OUT UNTIL NAVIGATION TO CHECKOUT IS ADDED<<<
+const cartItems = document.querySelector(".cart-items"); //   >>>COMMENTED OUT UNTIL NAVIGATION TO CHECKOUT IS ADDED<<<
 
 //Render Products
 function renderProducts(){
@@ -36,9 +36,18 @@ function renderProducts(){
     })
 }
 
-renderProducts();
+if (document.URL.includes("index.html"))
+{
+    renderProducts();
+}
+else if (document.URL.includes("checkout.html"))
+{
+    renderCart();
+}
 //Cart Array
 let cart = [];
+let cartExists = [];
+
 const item = products.find((product) => product.id === 01)
 //Add to Cart
 var total_price = 0;
@@ -75,31 +84,40 @@ function addItem(id){
 
     total_cost = total_quantity * item.price;
 
-    document.getElementById("total-price-" + item.id).innerHTML = total_cost;
-    document.getElementById("total-item-" + item.id).innerHTML = total_quantity;
-    //console.log(cart);
+    //document.getElementById("total-price-" + item.id).innerHTML = total_cost;
+    //document.getElementById("total-item-" + item.id).innerHTML = total_quantity;
+    if (!cart.includes(item))
+    {
+        cartExists.push(item);
+    }
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cartExists", JSON.stringify(cartExists));
 }
 
-let cartExists = [];
 function renderCart() {
-    cartExists.forEach(function(item) {
-        var element = document.getElementById("total-item-" + item.id)
-
-        //  if the element already exists, return and do nothing
-        if (typeof(element) != 'undefined' && element != null) {
-            return;
+    let data = JSON.parse(sessionStorage.getItem("cart"));
+    let dataExists = JSON.parse(sessionStorage.getItem("cartExists"));
+    var totalPrice = 0;
+    dataExists.forEach(function(item) {
+        var count = 0;
+        for (var element of data)
+        {
+            if (element.id == item.id)
+            {
+                count++;
+            }
         }
-        //  add entry if it doesn't exist
-        else {
-            cartItems.innerHTML +=    
+        totalPrice += count * item.price
+        cartItems.innerHTML +=    
                 `
                     <div class="cart-product-info-${item.id}">
                         <p <class="cart-product-name-${item.id}">${item.name}
-                        <class="cart-product-price"> <small>$</small> ${item.price}</p>
+                        <class="cart-product-price"> <small>$</small> ${item.price}
+                        <class="cart-product-total"> <small>Total:</small> ${count}</p>
                     </div>
                 `
-        }
     })
+    document.querySelector(".total-cart-cost").innerHTML = "<b>$ " + totalPrice + "</b>"; 
 }
 
 
